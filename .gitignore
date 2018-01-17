@@ -1,0 +1,5 @@
+mysql
+ghost
+keys
+nginx/data/**
+.env
