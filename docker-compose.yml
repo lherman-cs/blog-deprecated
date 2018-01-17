@@ -30,16 +30,16 @@ services:
       image: ghost
       restart: always
       expose:
-         - ${SERVER_PORT}
+         - 8000
       volumes:
          - ./ghost:/var/lib/ghost/content
       environment:
          NODE_ENV: production
          url: ${URL} 
          admin__url: ${URL}
-         server__port: ${SERVER_PORT} 
-         database__client: ${DB_CLIENT}
-         database__connection__host: ${DB_HOST}
+         server__port: 8000 
+         database__client: mysql
+         database__connection__host: db
          database__connection__user: ${DB_USER}
          database__connection__password: ${DB_PASS}
          mail__transport: "SMTP"
