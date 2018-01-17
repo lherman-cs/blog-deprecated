@@ -1,5 +1,6 @@
 mysql
 ghost
+portainer
 keys
 nginx/data/**
 .env

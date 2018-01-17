@@ -14,7 +14,17 @@ services:
          - ghost_private
          - ghost_public
       depends_on:
+         - monitor
          - ghost
+   
+   monitor:
+      image: portainer/portainer
+      restart: always
+      expose: 
+         - 9000
+      volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+         - ./portainer:/data
 
    ghost:
       image: ghost
